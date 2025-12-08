@@ -1,8 +1,3 @@
-Absolutely — here is a clean, professional README for the project that explains the purpose, datasets, steps, visuals, and findings. You can copy-paste it into a README.md file:
-
----
-
-````md
 # 🌍 Climate Data Analysis: CO₂ Emissions & Global Temperature Trends
 
 This project explores the relationship between global CO₂ emissions and global temperature anomalies using publicly available datasets.  
@@ -115,3 +110,4 @@ This notebook supports climate awareness by demonstrating:
 * Emerging geographic leaders in climate impact
 
 ---
+
