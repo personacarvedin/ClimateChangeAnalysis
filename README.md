@@ -31,7 +31,7 @@ The repository is structured to show how code scales from local data analysis to
 * **Objective:** Build a scalable ETL engine capable of running seamlessly on multi-node Hadoop/Cloud architectures without driver memory bottlenecks.
 * **Production Features Built:**
   * **Automated Header Detection Layer:** Programmatically scrapes source HTML headers via `urllib` to dynamically skip metadata variations across different data sources.
-  * **Fault-Tolerant Type Casting:** Utilizes native Spark SQL `try_cast()` to gracefully handle non-standard text anomalies (like NASA's `***` missing value string flags) across split partitions without crashing or data loss.
+  * **Fault-Tolerant Type Casting:** Utilizes native Spark SQL `try_cast()` to gracefully handle non-standard text anomalies across split partitions without crashing or data loss.
   * **Cluster Optimization & Smart Downsampling:** Performs all heavy filtering, sorting, and analytical groupings natively across cluster nodes *prior* to driver data aggregation (`.toPandas()`), preventing out-of-memory failures and maximizing throughput.
   * **Native Spark DataFrame Operations:** Uses `expr()` and Spark SQL functions to push computation to distributed nodes, reducing data movement and improving performance on enterprise clusters.
 * **Output:** **145 overlapping years** (recovers 1 additional year masked by strict type casting), Pearson correlation **0.93**, p-value **6.44e-66**
@@ -120,5 +120,3 @@ This repository is a **teaching project** that illustrates critical data enginee
 - **Error Handling:** Fault-tolerant operations recover data that strict approaches discard
 - **Distributed Computing:** Pushing computation to cluster nodes prevents memory bottlenecks
 - **Statistical Rigor:** Proper alignment and quality control enable reliable analysis
-
-Whether you're building climate dashboards, financial pipelines, or scientific analysis systems, these patterns apply universally.
